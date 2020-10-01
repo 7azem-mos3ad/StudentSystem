@@ -26,11 +26,13 @@
 	</nav>
     <div class="container">
 		<div class=" m-3">
+			<form action="{{form}}" method="POST" autocomplete="off">
 			<div class="form-group">
 			<label for="formGroupExampleInput" class="float-right">إضافة مجموعة</label>
-			<input class="form-control form-control-lg" type="text" id="formGroupExampleInput" placeholder="إضافة مجموعة">
+			<input required class="form-control form-control-lg" name="group" type="text" id="formGroupExampleInput" placeholder="إضافة مجموعة">
 			<button type="submit" class="btn btn-primary mt-3 float-right">تأكيد</button>
 			</div>
+			</form>
 		</div>
 
 	</div>

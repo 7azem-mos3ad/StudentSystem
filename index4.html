@@ -33,15 +33,15 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="container">
-					<form class="text-right">
+					<form class="text-right mt-3 mb-3" action="{{form}}" method="POST" autocomplete="off">
 						<div class="form-group">
 							<label for="formGroupExampleInput">اسم الطالب</label>
-							<input type="text" disabled class="form-control input-sm cheque-amt"
+							<input type="text" name="name" disabled class="form-control input-sm cheque-amt"
 								Placeholder="Enter Cheque Amount" onkeypress="return isNumber(event)">
 						</div>
 						<div class="form-group">
 							<label for="inputState">الشهر</label>
-							<select id="inputState" class="form-control">
+							<select id="inputState" name="month" class="form-control">
 								<option selected>1</option>
 								<option>2</option>
 								<option>3</option>
@@ -58,14 +58,14 @@
 						</div>
 						<div class="form-group">
 							<label for="inputState">المجموعة</label>
-							<select id="inputState" class="form-control">
+							<select id="inputState" name="group" class="form-control">
 								<option selected>سبت - اتنين - اربع</option>
 								<option>حد - تلات - خميس</option>
 							</select>
 						</div>
 						<div class="form-group">
 							<label for="formGroupExampleInput2">القيمة</label>
-							<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="ثمن الشهر">
+							<input type="text" name="value" class="form-control" id="formGroupExampleInput2" placeholder="ثمن الشهر">
 						</div>
 						<button type="submit" class="btn btn-primary">تأكيد</button>
 					</form>

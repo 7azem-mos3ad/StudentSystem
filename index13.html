@@ -36,7 +36,7 @@
 			<div class="modal-content">
 				<div class="container mb-3 mt-3">
 					<div class="alert alert-danger mt-3 text-right" role="alert">
-						<p>هل انت متأكد من حذف هذه المجموعة؟</p>
+						<p>هل انت متأكد من حذف هذا الطالب نهائيا؟</p>
 					</div>
 					<div class="float-right">
 						<button type="button" id='target2' class="btn btn-danger ml-1">نعم</button>
@@ -50,17 +50,31 @@
 		<table id="myTable" class="display nowrap text-right" style="width:100%">
 			<thead>
 				<tr>
-					<th>المجموعة</th>
-					<th>تعديل</th>
-					<th>حذف</th>
+					<th>اسم المجموعة</th>
+					<th>اسم المستخدم</th>
+          <th>الهاتف</th>
+          <th>المجموعة</th>
+          <th>كلمة المرور</th>
+          <th>المرحلة</th>
+          <th>تعديل</th>
+          <th>ايقاف مؤقت</th>
+          <th>حذف</th>
 				</tr>
 			</thead>
 			<tbody>
 				<div>
 					<tr>
-						<td>(تالتة ثانوي) سبت - اتنين - اربع الساعة 5</td>
+            <td>حازم مسعد</td>
+            <td>7azem</td>
+            <td>01002817639</td>
+            <td>(تالتة ثانوي) سبت - اتنين - اربع الساعة 5</td>
+            <td>123456</td>
+            <td>المرحلة الثالثة</td>
 						<td><button type="button" class="btn btn-success">
 								تعديل
+              </button></td>
+              <td><button type="button" class="btn btn-warning">
+								ايقاف مؤقت
 							</button></td>
 						<td><button type="button" class="btn btn-danger btnDelete" data-toggle="modal" data-target="#exampleModal">
 								حذف
@@ -69,13 +83,21 @@
 				</div>
 				<div>
 					<tr>
-						<td>(تانية ثانوي) سبت - اتنين - اربع الساعة 6</td>
+            <td>الأستاذ معوض</td>
+            <td>mo3awad</td>
+            <td>01018202575</td>
+            <td>(تانية ثانوي) سبت - اتنين - اربع الساعة 6</td>
+            <td>519537</td>
+            <td>المرحلة الرابعة</td>
 						<td><button type="button" class="btn btn-success">
-								تعديل
-							</button></td>
-						<td><button type="button" class="btn btn-danger btnDelete" data-toggle="modal" data-target="#exampleModal">
-								حذف
-							</button></td>
+              تعديل
+            </button></td>
+            <td><button type="button" class="btn btn-warning">
+              ايقاف مؤقت
+            </button></td>
+          <td><button type="button" class="btn btn-danger btnDelete" data-toggle="modal" data-target="#exampleModal">
+              حذف
+            </button></td>
 					</tr>
 				</div>
 			</tbody>
