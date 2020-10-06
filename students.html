@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/datatablefinal.css">
+	<link rel="stylesheet" href="css/bootstrab.min.css">
+	<link rel="stylesheet" href="css/style4.css">
+	<link rel="stylesheet" href="fonts/Tajawal-Light.ttf">
+	<link rel="stylesheet" href="fonts/Tajawal-Bold.ttf">
+	<title>Document</title>
+	<style>
+		section {
+			position: relative;
+			min-height: 100vh;
+		}
+
+		.overlay {
+			position: absolute;
+			z-index: 1;
+			background-color: #00000057;
+			min-height: 100vh;
+			top: 0;
+			left: 0;
+		}
+
+		.new-nav {
+			position: relative !important;
+			color: #FFF !important;
+			background: linear-gradient(180deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 45%) 50%, rgb(0 0 0 / 19%) 100%) !important;
+			z-index: 0;
+		}
+
+		.new-nav a {
+			color: #FFF !important;
+			font-weight: lighter;
+		}
+
+		.navbar-brand {
+			font-weight: 300 !important;
+		}
+
+		.dropdown-item {
+			color: #000 !important;
+		}
+
+		.dropdown-toggle {
+			color: #fff;
+		}
+		
+		footer {
+			margin-top: 20vh;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg new-nav">
+		<a class="navbar-brand" href="#">الأستاذ معوض</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav float-right text-right">
+				<a class="nav-link active" href="#">بنك الأسألة <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="#">الإمتحانات</a>
+				<a class="nav-link" href="#">الطلاب</a>
+				<a class="nav-link" href="#">المراحل</a>
+				<a class="nav-link" href="#">المجموعات</a>
+				<a class="nav-link" href="#">الغياب</a>
+				<a class="nav-link" href="#">الشهر</a>
+				<a class="nav-link" href="#">المشرفين</a>
+				<div class="dropdown">
+					<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						خيارات
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<a style="color: #000 !important;" class="dropdown-item" href="#">تغيير اللغة</a>
+						<a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل الخروج</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<section>
+		<div class="overlay-background"></div>
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="container mb-3 mt-3">
+						<div class="alert alert-danger mt-3" role="alert">
+							<p>هل انت متأكد من حذف هذا الطالب نهائيا؟</p>
+						</div>
+						<div>
+							<button type="button" id='target2' class="btn btn-danger ml-1">نعم</button>
+							<button type="button" id="target3" class="btn btn-light">لا</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="container mb-3 mt-3">
+						<form action="{{form}}" method="POST" autocomplete="off" class="mt-3 mb-3">
+							<div class="form-group">
+								<label for="formGroupExampleInput">اسم الطالب</label>
+								<input type="text" name="name" class="form-control input-sm cheque-amt toedt "
+									Placeholder="Enter Cheque Amount" onkeypress="return isNumber(event)">
+								<label for="formGroupExampleInput" class="mt-1">الهاتف</label>
+								<input type="number" name="phone" class="form-control input-sm cheque-amt3 toedt3 "
+									Placeholder="Enter Cheque Amount" onkeypress="return isNumber(event)">
+									<div class="form-group input-sm cheque-amt4">
+										<label for="exampleFormControlSelect1" class="mt-3">المجموعة</label>
+										<select class="form-control cheque-amt4 toedt4" id="exampleFormControlSelect1" name="group">
+											<option>المجموعة الأولي</option>
+											<option>المجموعة الثانية</option>
+											<option>المجموعة الثالثة</option>
+											<option>المجموعة الرابعة</option>
+											<option>المجموعة الخامسة</option>
+											<option>المجموعة السادسة</option>
+										</select>
+									</div>
+								<label for="formGroupExampleInput">كلمة المرور</label>
+								<input type="text" name="password" class="form-control input-sm cheque-amt5 toedt5"
+									Placeholder="Enter Cheque Amount" onkeypress="return isNumber(event)">
+									<div class="form-group input-sm cheque-amt4"  >
+										<label for="exampleFormControlSelect1" class="mt-3">المرحلة</label>
+										<select class="form-control cheque-amt6 toedt6" id="exampleFormControlSelect1" name="level">
+											<option>المرحلة الأولي</option>
+											<option>المرحلة الثانية</option>
+											<option>المرحلة الثالثة</option>
+											<option>المرحلة الرابعة</option>
+											<option>المرحلة الخامسة</option>
+											<option>المرحلة السادسة</option>
+										</select>
+									</div>
+
+								<div>
+									<button id="target4" type="button" class="btn btn-primary mt-3">تأكيد</button>
+									<button id="target5" type="button" class="btn mt-3">عودة</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+		<div class="col-md-12 text-center mb-3 mt-3">
+			<button class="btn btn-info"> إضافة</button>
+		</div>
+
+		<div class="container">
+			<div class="the-container">
+
+				<table id="myTable" class="display nowrap">
+					<thead>
+						<tr>
+							<th>اسم المجموعة</th>
+							<th>اسم المستخدم</th>
+							<th>الهاتف</th>
+							<th>المجموعة</th>
+							<th>كلمة المرور</th>
+							<th>المرحلة</th>
+							<th>تعديل</th>
+							<th>ايقاف مؤقت</th>
+							<th>حذف</th>
+						</tr>
+					</thead>
+					<tbody>
+						<div>
+							<tr>
+								<td class="cheque-amt">حازم مسعد</td>
+								<td class="cheque-amt2">7azem</td>
+								<td class="cheque-amt3">01002817639</td>
+								<td class="cheque-amt4">(تالتة ثانوي) سبت - اتنين - اربع الساعة 5</td>
+								<td class="cheque-amt5">123456</td>
+								<td class="cheque-amt6">المرحلة الثالثة</td>
+								<td><button type="button" class="btn btn-success btnedit" data-toggle="modal"
+										data-target="#exampleModal2">
+										تعديل
+									</button></td>
+								<td><button type="button" class="btn btn-warning">
+										ايقاف مؤقت
+									</button></td>
+								<td><button type="button" class="btn btn-danger btnDelete" data-toggle="modal"
+										data-target="#exampleModal">
+										حذف
+									</button></td>
+							</tr>
+						</div>
+						<div>
+							<tr>
+								<td class="cheque-amt">الأستاذ معوض</td>
+								<td class="cheque-amt2">mo3awad</td>
+								<td class="cheque-amt3">01018202575</td>
+								<td class="cheque-amt4">(تانية ثانوي) سبت - اتنين - اربع الساعة 6</td>
+								<td class="cheque-amt5">519537</td>
+								<td class="cheque-amt6">المرحلة الرابعة</td>
+								<td><button type="button" class="btn btn-success btnedit" data-toggle="modal"
+										data-target="#exampleModal2">
+										تعديل
+									</button></td>
+								<td><button type="button" class="btn btn-warning">
+										ايقاف مؤقت
+									</button></td>
+								<td><button type="button" class="btn btn-danger btnDelete" data-toggle="modal"
+										data-target="#exampleModal">
+										حذف
+									</button></td>
+							</tr>
+						</div>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</footer>
+	</section>
+	<script src="js/jQuery.js"></script>
+	<script src="js/bootstrab.min.js"></script>
+	<script src="js/datatable.js"></script>
+	<script src="js/to compress/jquery.dataTables.min.js"></script>
+	<script src="js/to compress/dataTables.buttons.min.js"></script>
+	<script src="js/to compress/buttons.flash.min.js"></script>
+	<script src="js/to compress/jszip.min.js"></script>
+	<script src="js/to compress/pdfmake.min.js"></script>
+	<script src="js/to compress/vfs_fonts.js"></script>
+	<script src="js/to compress/buttons.html5.min.js"></script>
+	<script src="js/to compress/buttons.print.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#myTable').DataTable({
+				dom: 'Bfrtip',
+				buttons: [
+					'copy', 'csv', 'excel', 'pdf', 'print'
+				],
+				"language": {
+					search: '<strong class="fa fa-filter mr-2" aria-hidden="true">البحث</strong>',
+					searchPlaceholder: 'بحث'
+				}
+			});
+			$('#myTable').on('click', '.btnDelete', function () {
+				var confDlt = $(this).closest('tr');
+				$('#target3').click(function () {
+					$("#exampleModal").modal('hide');
+				})
+				$("#target2").click(function () {
+					confDlt.remove();
+					$("#exampleModal").modal('hide');
+				});
+			});
+			$('#myTable').on('click', '.btnedit', function () {
+				var edtMyTd = $(this).closest('tr').eq(0).find('td').eq(0);
+				var edtMyTd2 = $(this).closest('tr').eq(0).find('td').eq(1);
+				var edtMyTd3 = $(this).closest('tr').eq(0).find('td').eq(2);
+				var edtMyTd4 = $(this).closest('tr').eq(0).find('td').eq(3);
+				var edtMyTd5 = $(this).closest('tr').eq(0).find('td').eq(4);
+				var edtMyTd6 = $(this).closest('tr').eq(0).find('td').eq(5);
+				$('#target5').click(function () {
+					$("#exampleModal2").modal('hide');
+				});
+				$('#exampleModal2').on('click', '#target4', function () {
+
+var str = $(".toedt").val();
+$(edtMyTd).text(str);
+
+// var str2 = $(".toedt2").val();
+// $(edtMyTd2).text(str2);
+
+var str3 = $(".toedt3").val();
+$(edtMyTd3).text(str3);
+
+var str4 = $(".toedt4").val();
+$(edtMyTd4).text(str4);
+
+var str5 = $(".toedt5").val();
+$(edtMyTd5).text(str5);
+
+var str6 = $(".toedt6").val();
+$(edtMyTd6).text(str6);
+$("#exampleModal2").modal('hide');
+edtMyTd = '';
+edtMyTd2 = '';
+edtMyTd3 = '';
+edtMyTd4 = '';
+edtMyTd5 = '';
+edtMyTd6 = '';
+});
+			});
+
+			$('#exampleModal2').on('show.bs.modal', function (e) {
+var _button = $(e.relatedTarget);
+var _row = _button.parents("tr");
+var _chequeAmt = _row.find(".cheque-amt").text();
+$(this).find(".cheque-amt").val(_chequeAmt);
+});
+$('#exampleModal2').on('show.bs.modal', function (e) {
+var _button = $(e.relatedTarget);
+var _row = _button.parents("tr");
+var _chequeAmt2 = _row.find(".cheque-amt2").text();
+$(this).find(".cheque-amt2").val(_chequeAmt2);
+});
+$('#exampleModal2').on('show.bs.modal', function (e) {
+var _button = $(e.relatedTarget);
+var _row = _button.parents("tr");
+var _chequeAmt3 = _row.find(".cheque-amt3").text();
+$(this).find(".cheque-amt3").val(_chequeAmt3);
+});
+$('#exampleModal2').on('show.bs.modal', function (e) {
+var _button = $(e.relatedTarget);
+var _row = _button.parents("tr");
+var _chequeAmt4 = _row.find(".cheque-amt4").text();
+$(this).find(".cheque-amt4").val(_chequeAmt4);
+});
+$('#exampleModal2').on('show.bs.modal', function (e) {
+var _button = $(e.relatedTarget);
+var _row = _button.parents("tr");
+var _chequeAmt5 = _row.find(".cheque-amt5").text();
+$(this).find(".cheque-amt5").val(_chequeAmt5);
+});
+$('#exampleModal2').on('show.bs.modal', function (e) {
+var _button = $(e.relatedTarget);
+var _row = _button.parents("tr");
+var _chequeAmt6 = _row.find(".cheque-amt6").text();
+$(this).find(".cheque-amt6").val(_chequeAmt6);
+});
+		});
+	</script>
+
+</body>
+
+</html>

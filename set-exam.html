@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/datatablefinal.css">
+	<link rel="stylesheet" href="css/bootstrab.min.css">
+	<link rel="stylesheet" href="css/style4.css">
+	<link rel="stylesheet" href="fonts/Tajawal-Light.ttf">
+	<link rel="stylesheet" href="fonts/Tajawal-Bold.ttf">
+	<title>Document</title>
+</head>
+<style>
+	section {
+			position: relative;
+			min-height: 100vh;
+		}
+
+		.overlay {
+			position: absolute;
+			z-index: 1;
+			background-color: #00000057;
+			min-height: 100vh;
+			top: 0;
+			left: 0;
+		}
+
+		.new-nav {
+			position: relative !important;
+			color: #FFF !important;
+			background: linear-gradient(180deg, rgb(0 0 0 / 50%) 0%, rgb(0 0 0 / 45%) 50%, rgb(0 0 0 / 19%) 100%) !important;
+			z-index: 0;
+		}
+
+		.new-nav a {
+			color: #FFF !important;
+			font-weight: lighter;
+		}
+
+		.navbar-brand {
+			font-weight: 300 !important;
+		}
+
+		.dropdown-item {
+			color: #000 !important;
+		}
+
+		.dropdown-toggle {
+			color: #fff;
+		}
+		
+		footer {
+			margin-top: 20vh;
+		}
+		form {
+			margin-top:0 !important; margin-bottom: 5vh;
+		}
+		label {
+			color: #FFF;
+		}
+		.group-select {
+			width: calc(51vw/3); margin-left: 1vw; display: inline-block !important;
+		}
+</style>
+<body>
+	<nav class="navbar navbar-expand-lg new-nav">
+		<a class="navbar-brand" href="#">الأستاذ معوض</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav float-right text-right">
+				<a class="nav-link active" href="#">بنك الأسألة <span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="#">الإمتحانات</a>
+				<a class="nav-link" href="#">الطلاب</a>
+				<a class="nav-link" href="#">المراحل</a>
+				<a class="nav-link" href="#">المجموعات</a>
+				<a class="nav-link" href="#">الغياب</a>
+				<a class="nav-link" href="#">الشهر</a>
+				<a class="nav-link" href="#">المشرفين</a>
+				<div class="dropdown">
+					<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						خيارات
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<a style="color: #000 !important;" class="dropdown-item" href="#">تغيير اللغة</a>
+						<a style="color: #000 !important;" class="dropdown-item" href="#">تسجيل الخروج</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<section>
+		<div class="overlay-background"></div>
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="container">
+					<form class=" mt-3 mb-3" action="{{form}}" method="POST" autocomplete="off">
+            <div class="form-group">
+							<label for="formGroupExampleInput">اسم الطالب</label>
+							<input type="text" name="name" disabled class="form-control input-sm cheque-amt"
+								Placeholder="Enter Cheque Amount" onkeypress="return isNumber(event)">
+						</div>
+            <div class="form-group">
+							<label for="formGroupExampleInput">الدرجة</label>
+							<input type="number" name="degree" class="form-control input-sm cheque-amt" placeholder="الدرجة">
+						</div>
+						<button type="submit" class="btn btn-primary">تأكيد</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+  <div class="col-md-12 text-center">
+    <form action="{{form}}" method="POST" autocomplete="off">
+      <div class="form-group group-select"  >
+        <label for="exampleFormControlSelect1" class="mt-3"  >الامتحان</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="exam">
+          <option>الامتحان الأولي</option>
+          <option>الامتحان الثانية</option>
+          <option>الامتحان الثالثة</option>
+          <option>الامتحان الرابعة</option>
+          <option>الامتحان الخامسة</option>
+          <option>الامتحان السادسة</option>
+        </select>
+      </div>
+      <div class="form-group group-select"  >
+        <label for="exampleFormControlSelect1" class="mt-3"  >المرحلة</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="level">
+          <option>المرحلة الأولي</option>
+          <option>المرحلة الثانية</option>
+          <option>المرحلة الثالثة</option>
+          <option>المرحلة الرابعة</option>
+          <option>المرحلة الخامسة</option>
+          <option>المرحلة السادسة</option>
+        </select>
+      </div>
+      <div class="form-group group-select"  >
+        <label for="exampleFormControlSelect1" class="mt-3"  >الوحدة</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="unit">
+          <option>الوحدة الأولي</option>
+          <option>الوحدة الثانية</option>
+          <option>الوحدة الثالثة</option>
+          <option>الوحدة الرابعة</option>
+          <option>الوحدة الخامسة</option>
+          <option>الوحدة السادسة</option>
+        </select>
+      </div>
+      <div class="form-group group-select">
+        <label for="exampleFormControlSelect1" class="mt-3"  >الدرس</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="lesson">
+          <option>الدرس الأولي</option>
+          <option>الدرس الثانية</option>
+          <option>الدرس الثالثة</option>
+          <option>الدرس الرابعة</option>
+          <option>الدرس الخامسة</option>
+          <option>الدرس السادسة</option>
+        </select>
+      </div>
+    </form>
+  </div>
+
+	<div class="container">
+<div class="the-container">
+	
+	<table id="myTable" class="display nowrap">
+		<thead>
+			<tr>
+				<th>السؤال</th>
+
+				<th>إضافة</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="cheque-amt">السؤال الثاني</td>
+				<td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+						إضافة
+					</button></td>
+			</tr>
+			<tr>
+				<td class="cheque-amt">السؤال الأول</td>
+				<td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+						إضافة
+					</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+</footer>
+</section>
+	<script src="js/jQuery.js"></script>
+	<script src="js/bootstrab.min.js"></script>
+	<script src="js/datatable.js"></script>
+	<script src="js/to compress/jquery.dataTables.min.js"></script>
+	<script src="js/to compress/dataTables.buttons.min.js"></script>
+	<script src="js/to compress/buttons.flash.min.js"></script>
+	<script src="js/to compress/jszip.min.js"></script>
+	<script src="js/to compress/pdfmake.min.js"></script>
+	<script src="js/to compress/vfs_fonts.js"></script>
+	<script src="js/to compress/buttons.html5.min.js"></script>
+	<script src="js/to compress/buttons.print.min.js"></script>
+	<script>
+$(document).ready(function() {
+            $('#myTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+								],
+								"language": {
+    search: '<strong class="fa fa-filter mr-2" aria-hidden="true">البحث</strong>',
+    searchPlaceholder: 'بحث'}
+			});
+			
+			$('#exampleModal').on('show.bs.modal', function (e) {
+var _button = $(e.relatedTarget);
+var _row = _button.parents("tr");
+var _chequeAmt = _row.find(".cheque-amt").text();
+$(this).find(".cheque-amt").val(_chequeAmt);
+});
+        });
+	</script>
+	
+</body>
+
+</html>
